@@ -1,0 +1,34 @@
+backend/eniacproject/HELP.md
+backend/eniacproject/.gradle
+backend/eniacproject/build/
+backend/eniacproject/!gradle/wrapper/gradle-wrapper.jar
+backend/eniacproject/!**/src/main/**
+backend/eniacproject/!**/src/test/**
+
+### STS ###
+backend/eniacproject/.apt_generated
+backend/eniacproject/.classpath
+backend/eniacproject/.factorypath
+backend/eniacproject/.project
+backend/eniacproject/.settings
+backend/eniacproject/.springBeans
+backend/eniacproject/.sts4-cache
+
+### IntelliJ IDEA ###
+backend/eniacproject/.idea
+backend/eniacproject/*.iws
+backend/eniacproject/*.iml
+backend/eniacproject/*.ipr
+backend/eniacproject/out/
+backend/.idea
+
+### NetBeans ###
+backend/eniacproject/nbproject/private/
+backend/eniacproject/nbbuild/
+backend/eniacproject/dist/
+backend/eniacproject/nbdist/
+backend/eniacproject/.nb-gradle/
+
+### VS Code ###
+backend/eniacproject/.vscode/
+
