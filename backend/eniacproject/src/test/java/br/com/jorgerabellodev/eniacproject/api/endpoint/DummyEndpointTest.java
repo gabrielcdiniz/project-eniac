@@ -1,4 +1,4 @@
-package br.com.jorgerabellodev.eniacproject.endpoint;
+package br.com.jorgerabellodev.eniacproject.api.endpoint;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

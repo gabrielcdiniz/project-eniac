@@ -1,4 +1,4 @@
-package br.com.jorgerabellodev.eniacproject.endpoint;
+package br.com.jorgerabellodev.eniacproject.api.endpoint;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
