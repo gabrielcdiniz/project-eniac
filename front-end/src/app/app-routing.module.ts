@@ -1,3 +1,4 @@
+import { HomeProductsComponent } from './home-products/home-products.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,15 +11,16 @@ const routes: Routes = [
   {
     path: 'login',
     component: AuthenticationComponent
+  },
+  {
+    path: '',
+    component: HomeProductsComponent
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
-
-    MatListModule,
-    MatCardModule
+    RouterModule.forRoot(routes)
   ],
   exports: [
     RouterModule

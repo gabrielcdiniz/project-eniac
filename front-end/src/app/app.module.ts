@@ -15,13 +15,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
+import { HomeProductsComponent } from './home-products/home-products.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticationComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    HomeProductsComponent
   ],
   imports: [
     BrowserModule,
