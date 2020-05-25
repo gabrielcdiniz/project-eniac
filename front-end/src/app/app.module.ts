@@ -16,7 +16,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
 import { HomeProductsComponent } from './home-products/home-products.component';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { HomeProductsComponent } from './home-products/home-products.component';
     MatButtonModule,
     MatToolbarModule,
     MatBadgeModule,
-    MatMenuModule
+    MatMenuModule,
+    MatGridListModule,
+    MatDividerModule
   ],
   exports: [
     MatListModule,
@@ -47,7 +50,9 @@ import { HomeProductsComponent } from './home-products/home-products.component';
     MatButtonModule,
     MatToolbarModule,
     MatBadgeModule,
-    MatMenuModule
+    MatMenuModule,
+    MatGridListModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
