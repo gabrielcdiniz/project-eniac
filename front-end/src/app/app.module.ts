@@ -19,6 +19,7 @@ import { HomeProductsComponent } from './home-products/home-products.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { CartComponent } from './cart/cart.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CartComponent } from './cart/cart.component';
     MatBadgeModule,
     MatMenuModule,
     MatGridListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule
   ],
   exports: [
     MatListModule,
@@ -54,7 +56,8 @@ import { CartComponent } from './cart/cart.component';
     MatBadgeModule,
     MatMenuModule,
     MatGridListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

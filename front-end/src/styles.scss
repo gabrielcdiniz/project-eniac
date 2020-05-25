@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;500;700&display=swap');
 * {
     font-family: 'Hind', sans-serif;
+    user-select: none;
 }
 
 .font-hind {
@@ -68,25 +69,29 @@ body {
 }
 
 .full-width {
-    width: 100%;
+    width: 100% !important;
 }
 
 .z10 {
-    z-index: 10;
+    z-index: 10 !important;
 }
 
 .w-80 {
-    width: 80%;
+    width: 80% !important;
 }
 
 .h-100 {
-    height: 100%;
+    height: 100% !important;
 }
 
 .m-20 {
-    margin: 20px;
+    margin: 20px !important;
+}
+
+.mr-20 {
+    margin-right: 20px !important;
 }
 
 .mt-20 {
-    margin-top: 20px;
+    margin-top: 20px !important;
 }

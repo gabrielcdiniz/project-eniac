@@ -1,0 +1,31 @@
+.bg-cart {
+    background-image: url("./../../assets/bg-cart.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    mat-list-item {
+        height: 150px;
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.product-line {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    white-space: normal !important;
+    overflow: inherit !important;
+    .span-hidden {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        span {
+            text-align: justify;
+            word-break: keep-all;
+        }
+    }
+}
