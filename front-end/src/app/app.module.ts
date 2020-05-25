@@ -18,13 +18,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HomeProductsComponent } from './home-products/home-products.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticationComponent,
     ToolbarComponent,
-    HomeProductsComponent
+    HomeProductsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
