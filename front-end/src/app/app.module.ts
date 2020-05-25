@@ -20,6 +20,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { CartComponent } from './cart/cart.component';
 import { MatTableModule } from '@angular/material/table';
+import { ResgisterComponent } from './resgister/resgister.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MatTableModule } from '@angular/material/table';
     AuthenticationComponent,
     ToolbarComponent,
     HomeProductsComponent,
-    CartComponent
+    CartComponent,
+    ResgisterComponent
   ],
   imports: [
     BrowserModule,
