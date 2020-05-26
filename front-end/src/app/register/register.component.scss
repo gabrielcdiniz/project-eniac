@@ -1,0 +1,12 @@
+.bg-register {
+    background-image: url("./../../assets/bg-register.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    .form-register {
+        width: 50%;
+        min-width: 300px;
+        box-shadow: 5px 5px 15px #111111;
+    }
+}

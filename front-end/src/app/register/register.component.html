@@ -1,0 +1,103 @@
+<div class="bg-container bg-register">
+    <div class="shadow-layer"></div>
+
+    <mat-card class="form-register">
+
+        <form [formGroup]="formRegister" class="register-form">
+            <mat-card-header>
+                <h1>
+                    Criar Conta
+                </h1>
+            </mat-card-header>
+
+            <mat-card-content>
+                <mat-list role="list">
+
+                    <mat-list-item role="listitem">
+                        <mat-form-field class="w-50 m-5">
+                            <mat-label>Nome Completo</mat-label>
+                            <input matInput placeholder="Informe seu Nome Completo" formControlName="name">
+                            <mat-icon matSuffix>perm_identity</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-50 m-5">
+                            <mat-label>CPF</mat-label>
+                            <input matInput placeholder="Informe seu CPF" mask="000.000.000-00" formControlName="cpf">
+                            <mat-icon matSuffix>contacts</mat-icon>
+                        </mat-form-field>
+                    </mat-list-item>
+
+                    <mat-list-item role="listitem" class="mt-20">
+                        <mat-form-field class="full-width m-5">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Ex: exemplo@email.com" formControlName="email">
+                            <mat-icon matSuffix>email</mat-icon>
+                        </mat-form-field>
+                    </mat-list-item>
+
+                    <mat-list-item role="listitem" class="mt-20">
+                        <mat-form-field class="w-50 m-5">
+                            <mat-label>Senha</mat-label>
+                            <input type="password" matInput>
+                            <mat-icon matSuffix>vpn_key</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-50 m-5">
+                            <mat-label>Confirmar Senha</mat-label>
+                            <input type="password" matInput formControlName="password">
+                            <mat-icon matSuffix>vpn_key</mat-icon>
+                        </mat-form-field>
+                    </mat-list-item>
+
+                    <!-- Address -->
+                    <mat-list-item role="listitem" class="mt-20">
+                        <mat-form-field class="w-33 m-5">
+                            <mat-label>CEP</mat-label>
+                            <input type="text" [maxLength]="9" (keypress)="onlyNumbers($event.target.value)" mask="0{5}-0{3}" [validation]="false" (blur)="searchCep($event.target.value)" matInput placeholder="Informe seu CEP" formControlName="zipcode">
+                            <mat-icon matSuffix>person_pin_circle</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-33 m-5">
+                            <mat-label>Rua</mat-label>
+                            <input type="text" matInput placeholder="Informe a Rua" formControlName="street">
+                            <mat-icon matSuffix>view_stream</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-33 m-5">
+                            <mat-label>Complemento</mat-label>
+                            <input type="text" matInput placeholder="Informe o Complemento" formControlName="complement">
+                            <mat-icon matSuffix>subject</mat-icon>
+                        </mat-form-field>
+                    </mat-list-item>
+
+                    <mat-list-item role="listitem" class="mt-20">
+                        <mat-form-field class="w-33 m-5">
+                            <mat-label>Bairro</mat-label>
+                            <input type="text" matInput placeholder="Informe seu Bairro" formControlName="neighborhood">
+                            <mat-icon matSuffix>apartment</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-33 m-5">
+                            <mat-label>Cidade</mat-label>
+                            <input type="text" matInput placeholder="Informe sua Cidade" formControlName="city">
+                            <mat-icon matSuffix>emoji_transportation</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-33 m-5">
+                            <mat-label>Estado</mat-label>
+                            <input type="text" matInput placeholder="Informe seu Estado" formControlName="state">
+                            <mat-icon matSuffix>map</mat-icon>
+                        </mat-form-field>
+                    </mat-list-item>
+
+                    <mat-list-item role="listitem">
+                        <button [disabled]="formRegister.invalid" type="button" mat-raised-button class="full-width" color="accent">Criar Conta</button>
+                    </mat-list-item>
+
+                </mat-list>
+            </mat-card-content>
+
+        </form>
+    </mat-card>
+
+</div>

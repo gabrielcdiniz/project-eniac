@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +22,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { CartComponent } from './cart/cart.component';
 import { MatTableModule } from '@angular/material/table';
-import { ResgisterComponent } from './resgister/resgister.component';
+import { RegisterComponent } from './register/register.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
+// export const options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
   declarations: [
@@ -29,12 +34,16 @@ import { ResgisterComponent } from './resgister/resgister.component';
     ToolbarComponent,
     HomeProductsComponent,
     CartComponent,
-    ResgisterComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot(),
 
     MatListModule,
     MatCardModule,
