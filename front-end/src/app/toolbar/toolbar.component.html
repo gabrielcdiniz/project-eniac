@@ -1,18 +1,22 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <span class="c-pointer" routerLink="/">
-          <img src="" alt="logo" style="width: 32px; height: 32px;">
+        <span class="c-pointer container-flex-center" routerLink="/">
+            <!-- <img src="" alt="logo" style="width: 32px; height: 32px;"> -->
+            <button mat-icon-button>
+                <mat-icon>store</mat-icon>
+            </button>
+            <span>Home</span>
         </span>
 
         <span class="flex-auto"></span>
 
         <div>
             <button mat-icon-button class="mr-20" routerLink="/cart">
-              <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+                <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
             </button>
 
             <button mat-stroked-button color="accent" routerLink="/login">
-              Entrar
+                Entrar
             </button>
 
             <!-- <button mat-stroked-button [matMenuTriggerFor]="beforeMenu" color="accent">Perfil</button>
