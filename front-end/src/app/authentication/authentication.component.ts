@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'eniac-authentication',
-  templateUrl: './authentication.component.html',
-  styleUrls: ['./authentication.component.scss']
+    selector: 'eniac-authentication',
+    templateUrl: './authentication.component.html',
+    styleUrls: ['./authentication.component.scss']
 })
 export class AuthenticationComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
+
+    public login(): void {
+
+    }
 
 }

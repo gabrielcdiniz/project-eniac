@@ -13,6 +13,7 @@
             <mat-card-content>
                 <mat-list role="list">
 
+                    <!-- Informations -->
                     <mat-list-item role="listitem">
                         <mat-form-field class="w-50 m-5">
                             <mat-label>Nome Completo</mat-label>
@@ -26,7 +27,9 @@
                             <mat-icon matSuffix>contacts</mat-icon>
                         </mat-form-field>
                     </mat-list-item>
+                    <!-- / Informations -->
 
+                    <!-- Email -->
                     <mat-list-item role="listitem" class="mt-20">
                         <mat-form-field class="full-width m-5">
                             <mat-label>Email</mat-label>
@@ -34,26 +37,29 @@
                             <mat-icon matSuffix>email</mat-icon>
                         </mat-form-field>
                     </mat-list-item>
+                    <!-- / Email -->
 
+                    <!-- Password -->
                     <mat-list-item role="listitem" class="mt-20">
-                        <mat-form-field class="w-50 m-5">
+                        <mat-form-field class="full-width m-5">
                             <mat-label>Senha</mat-label>
-                            <input type="password" matInput>
-                            <mat-icon matSuffix>vpn_key</mat-icon>
-                        </mat-form-field>
-
-                        <mat-form-field class="w-50 m-5">
-                            <mat-label>Confirmar Senha</mat-label>
                             <input type="password" matInput formControlName="password">
                             <mat-icon matSuffix>vpn_key</mat-icon>
                         </mat-form-field>
+
+                        <!-- <mat-form-field class="w-50 m-5">
+                            <mat-label>Confirmar Senha</mat-label>
+                            <input type="password" matInput formControlName="password">
+                            <mat-icon matSuffix>vpn_key</mat-icon>
+                        </mat-form-field> -->
                     </mat-list-item>
+                    <!-- / Password -->
 
                     <!-- Address -->
                     <mat-list-item role="listitem" class="mt-20">
                         <mat-form-field class="w-33 m-5">
                             <mat-label>CEP</mat-label>
-                            <input type="text" [maxLength]="9" (keypress)="onlyNumbers($event.target.value)" mask="0{5}-0{3}" [validation]="false" (blur)="searchCep($event.target.value)" matInput placeholder="Informe seu CEP" formControlName="zipcode">
+                            <input type="text" [maxLength]="9" mask="0{5}-0{3}" [validation]="false" (blur)="searchCep($event.target.value)" matInput placeholder="Informe seu CEP" formControlName="zipcode">
                             <mat-icon matSuffix>person_pin_circle</mat-icon>
                         </mat-form-field>
 
@@ -89,9 +95,10 @@
                             <mat-icon matSuffix>map</mat-icon>
                         </mat-form-field>
                     </mat-list-item>
+                    <!-- / Address -->
 
                     <mat-list-item role="listitem">
-                        <button [disabled]="formRegister.invalid" type="button" mat-raised-button class="full-width" color="accent">Criar Conta</button>
+                        <button (click)="send()" [disabled]="formRegister.invalid" type="button" mat-raised-button class="full-width" color="accent">Criar Conta</button>
                     </mat-list-item>
 
                 </mat-list>
