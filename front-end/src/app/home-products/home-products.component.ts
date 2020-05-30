@@ -84,7 +84,7 @@ export class HomeProductsComponent implements OnInit {
             c.products = this.productsList.filter(p => p.category.id === c.id);
             return c;
         };
-        // this.categoryList.push(...this.Category.AllCategories.map(categoriesWithProducts));
+        this.categoryList.push(...this.Category.AllCategories);
         this.categoryList.map(categoriesWithProducts);
     }
 

@@ -1,5 +1,5 @@
 .bg-home-products {
-    background-image: url('./../../assets/bg-home-products.jpg');
+    background-image: url("./../../assets/bg-home-products.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -9,4 +9,19 @@
 .product {
     margin: 5px;
     width: 24%;
+    height: 350px;
+    max-height: 350px;
+
+    mat-card.mat-card {
+        height: 300px;
+        max-height: 300px;
+
+        mat-card-content.mat-card-content {
+            height: 95px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
 }
