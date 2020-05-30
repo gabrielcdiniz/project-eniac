@@ -197,7 +197,7 @@ export class HomeProductsComponent implements OnInit {
 @Component({
     selector: 'eniac-dialog',
     template: `
-    <img mat-card-image src='https://material.angular.io/assets/img/examples/shiba2.jpg' alt='product'>
+    <img mat-card-image [src]='product.photo' alt='product'>
     <mat-dialog-content>
         <h2>
             {{ product.name }}
