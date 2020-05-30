@@ -16,54 +16,139 @@ export class HomeProductsComponent implements OnInit {
     public readonly productsList: IProduct[] = [
         {
             id: '1',
-            name: 'God of War III',
-            description: 'Jogo Hack\'n Lash RPG',
-            price: 112.5,
+            name: 'Motorola G8',
+            price: 1259.9,
+            description: 'Smartphone 3gb ram 32gb de Armazenamento',
+            photo: 'https://bit.ly/3gACGVY',
             category: {
                 id: '1',
-                name: 'Jogos'
+                name: 'Celular'
             }
         },
         {
             id: '2',
-            name: 'Grand Thief Auto - GTA',
-            description: 'Jogo de Mundo Aberto',
-            price: 65.99,
+            name: 'Multilaser E Dual',
+            price: 455.85,
+            description: 'Smartphone 2gb ram 8gb de Armazenamento',
+            photo: 'https://bit.ly/2ZOTTVL',
             category: {
                 id: '1',
-                name: 'Jogos'
+                name: 'Celular'
             }
         },
         {
             id: '3',
-            name: 'Call of Duty - Black Ops II',
-            description: 'Jogo FPS',
-            price: 189.99,
+            name: 'Samsung A30s',
+            price: 1450.99,
+            description: 'Smartphone 4gb ram 64gb de Armazenamento',
+            photo: 'https://bit.ly/3ewcbiH',
             category: {
                 id: '1',
-                name: 'Jogos'
+                name: 'Celular'
+            }
+        },
+        {
+            id: '11',
+            name: 'Samsung A30s',
+            price: 1450.99,
+            description: 'Smartphone 4gb ram 64gb de Armazenamento',
+            photo: 'https://bit.ly/3ewcbiH',
+            category: {
+                id: '1',
+                name: 'Celular'
             }
         },
         {
             id: '4',
-            name: 'Smartphone A30',
-            description: 'Celular Samsung',
-            price: 1439.90,
+            name: 'Samsung J8',
+            price: 759.65,
+            description: 'Smartphone 2gb ram 16gb Armazenamento',
+            photo: 'https://bit.ly/2XfLtVO',
+            category: {
+                id: '1',
+                name: 'Celular'
+            }
+        },
+        {
+            id: '5',
+            name: 'Lenovo i5',
+            price: 2450,
+            description: 'Notebook i5 8th 8gb ram 1tb HD',
+            photo: 'https://bit.ly/2XGGrR7',
             category: {
                 id: '2',
-                name: 'Eletrônicos'
+                name: 'Notebook'
             }
-        }
+        },
+        {
+            id: '6',
+            name: 'Samsung i5',
+            price: 2679.99,
+            description: 'Notebook i5 8th 8gb ram 1tb HD',
+            photo: 'https://bit.ly/3ci7Qhu',
+            category: {
+                id: '2',
+                name: 'Notebook'
+            }
+        },
+        {
+            id: '7',
+            name: 'Samsung i7',
+            price: 3665.49,
+            description: 'Notebook i7 8th 16gb ram 1tb HD',
+            photo: 'https://bit.ly/36K5Hds',
+            category: {
+                id: '2',
+                name: 'Notebook'
+            }
+        },
+        {
+            id: '8',
+            name: 'AOC Full HD',
+            price: 1654.99,
+            description: 'Televisão Full HD 32 polegadas',
+            photo: 'https://bit.ly/36ICn6X',
+            category: {
+                id: '3',
+                name: 'Televisão'
+            }
+        },
+        {
+            id: '9',
+            name: 'LG UHD',
+            price: 2450,
+            description: 'Televisão UHD 42 polegadas',
+            photo: 'https://bit.ly/2TOZZl5',
+            category: {
+                id: '3',
+                name: 'Televisão'
+            }
+        },
+        {
+            id: '10',
+            name: 'Philco 4k',
+            price: 2335.99,
+            description: 'Televisão Full HD 4k 40 polegadas',
+            photo: 'https://bit.ly/36KVwFj',
+            category: {
+                id: '3',
+                name: 'Televisão'
+            }
+        },
     ];
 
     public readonly categoryList: ICategory[] = [
         {
             id: '1',
-            name: 'Jogos'
+            name: 'Celular'
         },
         {
             id: '2',
-            name: 'Eletrônicos'
+            name: 'Notebook'
+        },
+        {
+            id: '3',
+            name: 'Televisão'
         }
     ];
 
@@ -112,7 +197,7 @@ export class HomeProductsComponent implements OnInit {
 @Component({
     selector: 'eniac-dialog',
     template: `
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="product">
+    <img mat-card-image src='https://material.angular.io/assets/img/examples/shiba2.jpg' alt='product'>
     <mat-dialog-content>
         <h2>
             {{ product.name }}
@@ -125,8 +210,8 @@ export class HomeProductsComponent implements OnInit {
         </small>
     </mat-dialog-content>
     <mat-dialog-actions>
-        <button mat-raised-button color="warn" (click)="addOnCart(product)">Adicionar ao Carrinho</button>
-        <button mat-raised-button color="accent" (click)="buy(product)">Comprar</button>
+        <button mat-raised-button color='warn' (click)='addOnCart(product)'>Adicionar ao Carrinho</button>
+        <button mat-raised-button color='accent' (click)='buy(product)'>Comprar</button>
     </mat-dialog-actions>
     `
 })
