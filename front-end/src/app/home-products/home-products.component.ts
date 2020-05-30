@@ -19,7 +19,7 @@ export class HomeProductsComponent implements OnInit {
             name: 'Motorola G8',
             price: 1259.9,
             description: 'Smartphone 3gb ram 32gb de Armazenamento',
-            photo: 'https://bit.ly/3gACGVY',
+            photo: './../../assets/photos/celular-motorola-g8.jpg',
             category: {
                 id: '1',
                 name: 'Celular'
@@ -30,7 +30,7 @@ export class HomeProductsComponent implements OnInit {
             name: 'Multilaser E Dual',
             price: 455.85,
             description: 'Smartphone 2gb ram 8gb de Armazenamento',
-            photo: 'https://bit.ly/2ZOTTVL',
+            photo: './../../assets/photos/celular-multilaser-e-dual.jpg',
             category: {
                 id: '1',
                 name: 'Celular'
@@ -41,7 +41,7 @@ export class HomeProductsComponent implements OnInit {
             name: 'Samsung A30s',
             price: 1450.99,
             description: 'Smartphone 4gb ram 64gb de Armazenamento',
-            photo: 'https://bit.ly/3ewcbiH',
+            photo: './../../assets/photos/celular-samsung-a30s.jpg',
             category: {
                 id: '1',
                 name: 'Celular'
@@ -52,7 +52,7 @@ export class HomeProductsComponent implements OnInit {
             name: 'Samsung A30s',
             price: 1450.99,
             description: 'Smartphone 4gb ram 64gb de Armazenamento',
-            photo: 'https://bit.ly/3ewcbiH',
+            photo: './../../assets/photos/celular-samsung-a30s.jpg',
             category: {
                 id: '1',
                 name: 'Celular'
@@ -63,7 +63,7 @@ export class HomeProductsComponent implements OnInit {
             name: 'Samsung J8',
             price: 759.65,
             description: 'Smartphone 2gb ram 16gb Armazenamento',
-            photo: 'https://bit.ly/2XfLtVO',
+            photo: './../../assets/photos/celular-samsung-j8.jpg',
             category: {
                 id: '1',
                 name: 'Celular'
@@ -74,7 +74,7 @@ export class HomeProductsComponent implements OnInit {
             name: 'Lenovo i5',
             price: 2450,
             description: 'Notebook i5 8th 8gb ram 1tb HD',
-            photo: 'https://bit.ly/2XGGrR7',
+            photo: './../../assets/photos/notebook-lenovo-i5.jpg',
             category: {
                 id: '2',
                 name: 'Notebook'
@@ -85,7 +85,7 @@ export class HomeProductsComponent implements OnInit {
             name: 'Samsung i5',
             price: 2679.99,
             description: 'Notebook i5 8th 8gb ram 1tb HD',
-            photo: 'https://bit.ly/3ci7Qhu',
+            photo: './../../assets/photos/notebook-samsung-i5.jpg',
             category: {
                 id: '2',
                 name: 'Notebook'
@@ -96,7 +96,7 @@ export class HomeProductsComponent implements OnInit {
             name: 'Samsung i7',
             price: 3665.49,
             description: 'Notebook i7 8th 16gb ram 1tb HD',
-            photo: 'https://bit.ly/36K5Hds',
+            photo: './../../assets/photos/notebook-samsung-i7.jpg',
             category: {
                 id: '2',
                 name: 'Notebook'
@@ -107,7 +107,7 @@ export class HomeProductsComponent implements OnInit {
             name: 'AOC Full HD',
             price: 1654.99,
             description: 'Televisão Full HD 32 polegadas',
-            photo: 'https://bit.ly/36ICn6X',
+            photo: './../../assets/photos/tv-aoc-fullhd.jpg',
             category: {
                 id: '3',
                 name: 'Televisão'
@@ -118,7 +118,7 @@ export class HomeProductsComponent implements OnInit {
             name: 'LG UHD',
             price: 2450,
             description: 'Televisão UHD 42 polegadas',
-            photo: 'https://bit.ly/2TOZZl5',
+            photo: './../../assets/photos/tv-lg-uhd.jpg',
             category: {
                 id: '3',
                 name: 'Televisão'
@@ -129,7 +129,7 @@ export class HomeProductsComponent implements OnInit {
             name: 'Philco 4k',
             price: 2335.99,
             description: 'Televisão Full HD 4k 40 polegadas',
-            photo: 'https://bit.ly/36KVwFj',
+            photo: './../../assets/photos/tv-philco-4k.jpg',
             category: {
                 id: '3',
                 name: 'Televisão'

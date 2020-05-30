@@ -21,8 +21,7 @@
                     <div class="container-flex">
                         <div *ngFor="let product of category.products" class="product" (click)="viewProduct(product)">
                             <mat-card class="c-pointer">
-                                <img mat-card-image [src]="product.photo"
-                                    alt="product">
+                                <img mat-card-image [src]="product.photo" alt="product">
 
                                 <mat-card-content>
                                     <h2>

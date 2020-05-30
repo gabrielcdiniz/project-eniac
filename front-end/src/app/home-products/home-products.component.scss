@@ -16,6 +16,14 @@
         height: 300px;
         max-height: 300px;
 
+        img {
+            max-height: 200px !important;
+            width: auto;
+            max-width: 230px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
         mat-card-content.mat-card-content {
             height: 95px;
             display: flex;
