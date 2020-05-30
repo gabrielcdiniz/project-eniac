@@ -98,7 +98,7 @@ export class RegisterComponent implements OnInit {
          *
          * 2. Adicionar um objeto (do tipo IUser) no LocalStorage
          */
-        this.validateCPF()
+        this.validateEmail()
             .then(user => {
                 if (!user) {
                     window.localStorage.setItem(`${encodeURI(this.user.email)}`, JSON.stringify(this.user));
@@ -115,7 +115,7 @@ export class RegisterComponent implements OnInit {
 
     }
 
-    private validateCPF(): Promise<IUser> {
+    private validateEmail(): Promise<IUser> {
         return new Promise((resolve, reject) => {
             const { email } = this.user;
             let user: IUser;

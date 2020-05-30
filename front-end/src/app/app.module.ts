@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -22,6 +23,7 @@ import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { CartComponent } from './cart/cart.component';
 import { DialogComponent, HomeProductsComponent } from './home-products/home-products.component';
+import { CurrencyPipe } from './pipes/currency.pipe';
 import { RegisterComponent } from './register/register.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
@@ -33,7 +35,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         HomeProductsComponent,
         CartComponent,
         RegisterComponent,
-        DialogComponent
+        DialogComponent,
+        CurrencyPipe
     ],
     imports: [
         BrowserModule,
@@ -56,7 +59,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         MatDividerModule,
         MatTableModule,
         MatDialogModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatExpansionModule
     ],
     exports: [
         MatListModule,
@@ -71,7 +75,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         MatDividerModule,
         MatTableModule,
         MatDialogModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatExpansionModule
     ],
     providers: [],
     bootstrap: [AppComponent]

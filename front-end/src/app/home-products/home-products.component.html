@@ -8,22 +8,39 @@
 
         <div class="container-flex">
 
-            <div class="product" (click)="viewProduct()">
-                <mat-card class="c-pointer">
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="product">
+            <mat-accordion class="full-width">
 
-                    <mat-card-content>
-                        <h2>
-                            Nome do Produto
-                        </h2>
-                        <small>
-                            Preço R$ 25,99.
-                        </small>
-                    </mat-card-content>
-                </mat-card>
-            </div>
+                <mat-expansion-panel *ngFor="let category of categoryList;">
+
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ category.name }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <div class="container-flex">
+                        <div *ngFor="let product of category.products" class="product" (click)="viewProduct(product)">
+                            <mat-card class="c-pointer">
+                                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                                    alt="product">
+
+                                <mat-card-content>
+                                    <h2>
+                                        {{ product.name }}
+                                    </h2>
+                                    <small>
+                                        {{ product.price | currency }}
+                                    </small>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+
+                </mat-expansion-panel>
+
+            </mat-accordion>
 
         </div>
-        
+
     </div>
 </div>
