@@ -36,7 +36,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         CartComponent,
         RegisterComponent,
         DialogComponent,
-        CurrencyPipe
+        CurrencyPipe,
     ],
     imports: [
         BrowserModule,

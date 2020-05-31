@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { BRAZIL_UF_STATES, SearchCepService } from '../services/search-cep.service';
 import { IUser } from './../model/iuser';
 
@@ -14,10 +16,15 @@ export class RegisterComponent implements OnInit {
 
     private user: IUser;
 
+    @Output() 
+    public ELogged = new EventEmitter<IUser>();
+
     constructor(
         private searchCepService: SearchCepService,
 
         private formBuilder: FormBuilder,
+        private snackBar: MatSnackBar,
+        private router: Router
     ) {
         this.formRegister = this.formBuilder.group({
             name: [null, Validators.required],
@@ -33,7 +40,11 @@ export class RegisterComponent implements OnInit {
         });
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
+        const logged = window.localStorage.getItem('logged');
+        if (logged) {
+            this.router.navigate(['/']);
+        }
     }
 
     /** Search the Address with BuscaCep API */
@@ -91,28 +102,37 @@ export class RegisterComponent implements OnInit {
             createdAt: (new Date().toLocaleString())
         };
 
-        /**
-         * 1. Validar se o CPF está sendo utilizado
-         *    TRUE:  Levantar uma mensagem (snackBar) informando que o CPF já está sendo usado e parar fluxo
-         *    FALSE: Continua o fluxo
-         *
-         * 2. Adicionar um objeto (do tipo IUser) no LocalStorage
-         */
         this.validateEmail()
             .then(user => {
                 if (!user) {
                     window.localStorage.setItem(`${encodeURI(this.user.email)}`, JSON.stringify(this.user));
+                    window.localStorage.setItem('logged', JSON.stringify(this.user));
+                    this.router.navigate(['/'])
+                        .then(() => {
+                            location.href = this.router.url;
+                            location.reload();
+                        });
                 } else if (user.cpf === this.user.cpf) {
-                    alert('Usuário já existe com o CPF informado !');
+                    this.showMessage('Usuário já existe com o CPF informado');
                 } else {
-                    alert('Usuário já existe !');
+                    this.showMessage('Usuário já existe');
                 }
             })
             .catch(err => {
-                alert('Ops ! Um erro aconteceu. Tente novamente.');
+                this.showMessage('Ops ! Um erro aconteceu. Tente novamente.');
                 console.error('err :>> ', err);
             });
 
+    }
+
+    private showMessage(message: string): void {
+        this.snackBar.open(
+            `${message} !`,
+            'Fechar', {
+            duration: 2500,
+            horizontalPosition: 'right',
+            verticalPosition: 'top',
+        });
     }
 
     private validateEmail(): Promise<IUser> {

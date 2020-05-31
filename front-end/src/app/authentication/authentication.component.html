@@ -3,7 +3,7 @@
 
     <mat-card class="form-login">
 
-        <form>
+        <form [formGroup]="formLogin">
             <mat-card-header>
                 <h1>
                     Login do Cliente
@@ -16,7 +16,7 @@
                     <mat-list-item role="listitem">
                         <mat-form-field class="full-width">
                             <mat-label>Email</mat-label>
-                            <input matInput placeholder="Ex: exemplo@email.com">
+                            <input matInput placeholder="Ex: exemplo@email.com" formControlName="email">
                             <mat-icon matSuffix>email</mat-icon>
                         </mat-form-field>
                     </mat-list-item>
@@ -24,7 +24,7 @@
                     <mat-list-item role="listitem" class="mt-20">
                         <mat-form-field class="full-width">
                             <mat-label>Senha</mat-label>
-                            <input type="password" matInput>
+                            <input type="password" matInput formControlName="password">
                             <mat-icon matSuffix>vpn_key</mat-icon>
                         </mat-form-field>
                     </mat-list-item>
@@ -34,7 +34,7 @@
                     </mat-list-item>
 
                     <mat-list-item role="listitem">
-                        <button type="button" mat-raised-button class="full-width" color="accent" (click)="login()">Entrar</button>
+                        <button type="button" [disabled]="formLogin.invalid" mat-raised-button class="full-width" color="accent" (click)="login()">Entrar</button>
                     </mat-list-item>
 
                 </mat-list>

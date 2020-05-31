@@ -15,20 +15,23 @@
                 <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
             </button>
 
-            <button mat-stroked-button color="accent" routerLink="/login">
+            <button *ngIf="!logged else loggedTemplate" mat-stroked-button color="accent" routerLink="/login">
                 Entrar
             </button>
 
-            <!-- <button mat-stroked-button [matMenuTriggerFor]="beforeMenu" color="accent">Perfil</button>
+            <ng-template #loggedTemplate>
+                <button mat-stroked-button [matMenuTriggerFor]="beforeMenu" color="accent">Olá {{ logged.name }}</button>
 
-            <mat-menu #beforeMenu="matMenu" xPosition="before">
-                <button mat-menu-item>
-                  Atualizar Perfil
-                </button>
-                <button mat-menu-item>
-                  Sair
-                </button>
-            </mat-menu> -->
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                    <!-- <button mat-menu-item>
+                    Atualizar Perfil
+                </button> -->
+                    <button mat-menu-item (click)="logout()">
+                        Sair
+                    </button>
+                </mat-menu>
+            </ng-template>
+
         </div>
 
     </mat-toolbar-row>
