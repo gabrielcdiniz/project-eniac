@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
     private user: IUser;
 
     @Output() 
-    public ELogged = new EventEmitter<IUser>();
+    public elogged = new EventEmitter<IUser>();
 
     constructor(
         private searchCepService: SearchCepService,

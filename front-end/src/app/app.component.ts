@@ -8,9 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     public title = 'front-end';
-    public user: IUser;
+    public loggedUser: IUser;
 
-    public login(user: IUser): void {
-        this.user = user;
+    public login(a: any): void {
+        console.log(a);
+        // this.loggedUser = user;
     }
 }

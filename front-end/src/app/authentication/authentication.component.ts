@@ -13,6 +13,9 @@ export class AuthenticationComponent implements OnInit {
 
     public formLogin: FormGroup;
 
+    // @Output() 
+    // public elogged = new EventEmitter<IUser>();
+
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
@@ -24,7 +27,11 @@ export class AuthenticationComponent implements OnInit {
         });
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
+        const logged = window.localStorage.getItem('logged');
+        if (logged) {
+            this.router.navigate(['/']);
+        }
     }
 
     public login(): void {
