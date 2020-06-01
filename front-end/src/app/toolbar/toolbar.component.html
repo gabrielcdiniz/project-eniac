@@ -12,7 +12,7 @@
 
         <div>
             <button mat-icon-button class="mr-20" routerLink="/cart">
-                <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+                <mat-icon [matBadge]="items" matBadgeColor="warn">shopping_cart</mat-icon>
             </button>
 
             <button *ngIf="!logged else loggedTemplate" mat-stroked-button color="accent" routerLink="/login">

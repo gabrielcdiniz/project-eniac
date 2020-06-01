@@ -6,26 +6,69 @@
 
         <mat-divider></mat-divider>
 
-        <mat-list>
+        <form>
 
-            <mat-list-item>
-                <div class="product-line" matLine>
-                    <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="product">
-                    <div class="span-hidden">
-                        <span>Nome do Produto</span>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis modi, cumque rerum nulla deserunt molestias expedita error voluptatem odio eos temporibus eveniet dolores consequuntur.</span>
+            <mat-list>
+
+                <mat-list-item *ngFor="let product of productsList; let i = index;">
+                    <div class="product-line" matLine>
+                        <!-- Photo -->
+                        <img [src]="product.photo" alt="product">
+                        <!-- / Photo -->
+
+                        <!-- Description -->
+                        <div class="span-hidden">
+                            <span> {{ product.name }} </span>
+                            <span> {{ product.description }} </span>
+                        </div>
+                        <!-- / Description -->
+
+                        <!-- Quantity -->
+                        <span>
+                            <mat-form-field class="full-width m-5">
+                                <mat-label>Quantidade</mat-label>
+                                <input matInput type="number" value="1" min="1" max="10" #qt (change)="checkValue(i, qt.value)">
+                            </mat-form-field>
+                        </span>
+                        <!-- / Quantity -->
+
+                        <!-- Price -->
+                        <span>
+                            {{ prices[i] | currency }}
+                        </span>
+                        <!-- / Price -->
+
+                        <!-- Delete Product -->
+                        <button mat-mini-fab color="warn" type="button" (click)="removeItem(product)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <!-- / Delete Product -->
                     </div>
-                    <span>Quantidade</span>
-                    <span>R$ 19,99</span>
-                    <button mat-mini-fab color="warn">
-                      <mat-icon>delete</mat-icon>
-                    </button>
-                </div>
-            </mat-list-item>
+                </mat-list-item>
 
-        </mat-list>
+                <mat-list-item>
+                    <div class="product-line" matLine>
+                        <span style="flex: 1 1 auto;"></span>
 
+                        <span>
+                            {{ getFinalPrice | currency }}
+                        </span>
+                    </div>
+                </mat-list-item>
 
+                <mat-list-item>
+                    <div class="product-line" matLine>
+                        <span style="flex: 1 1 auto;"></span>
+
+                        <button mat-stroked-button color="accent" type="button" (click)="finish()">
+                            Finalizar Compra
+                        </button>
+                    </div>
+                </mat-list-item>
+
+            </mat-list>
+
+        </form>
 
     </div>
 </div>

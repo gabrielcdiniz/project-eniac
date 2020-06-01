@@ -1,10 +1,12 @@
-import { Product } from './../classes/product';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { IProduct } from '../model/iproduct';
-import { ICategory } from '../model/icategory';
+import { Router } from '@angular/router';
 import { Category } from '../classes/category';
+import { ICategory } from '../model/icategory';
+import { IProduct } from '../model/iproduct';
+import { Cart } from './../classes/cart';
+import { Product } from './../classes/product';
 
 @Component({
     selector: 'eniac-home-products',
@@ -38,17 +40,6 @@ export class HomeProductsComponent implements OnInit {
         },
         {
             id: '3',
-            name: 'Samsung A30s',
-            price: 1450.99,
-            description: 'Smartphone 4gb ram 64gb de Armazenamento',
-            photo: './../../assets/photos/celular-samsung-a30s.jpg',
-            category: {
-                id: '1',
-                name: 'Celular'
-            }
-        },
-        {
-            id: '11',
             name: 'Samsung A30s',
             price: 1450.99,
             description: 'Smartphone 4gb ram 64gb de Armazenamento',
@@ -163,7 +154,7 @@ export class HomeProductsComponent implements OnInit {
         this.Category = new Category();
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.productsList.push(...this.Product.AllProducts);
         const categoriesWithProducts = (c: ICategory): ICategory => {
             c.products = this.productsList.filter(p => p.category.id === c.id);
@@ -216,16 +207,38 @@ export class HomeProductsComponent implements OnInit {
     `
 })
 export class DialogComponent {
+
+    private Cart: Cart;
+
     constructor(
         public dialogRef: MatDialogRef<DialogComponent>,
-        @Inject(MAT_DIALOG_DATA) public product: IProduct
-    ) { }
+        @Inject(MAT_DIALOG_DATA) public product: IProduct,
+        private router: Router
+    ) {
+        this.Cart = new Cart();
+    }
 
     public addOnCart(product: IProduct): void {
+        this.Cart.newProduct(product);
         this.dialogRef.close(this.product);
+        setTimeout(() => {
+            this.router.navigate(['/'])
+                .then(() => {
+                    location.href = this.router.url;
+                    location.reload();
+                });
+        }, 500);
     }
 
     public buy(product: IProduct): void {
-
+        this.Cart.newProduct(product);
+        this.dialogRef.close(this.product);
+        setTimeout(() => {
+            this.router.navigate(['/cart'])
+                .then(() => {
+                    location.href = this.router.url;
+                    location.reload();
+                });
+        }, 500);
     }
 }
