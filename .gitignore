@@ -32,3 +32,7 @@ backend/eniacproject/.nb-gradle/
 ### VS Code ###
 backend/eniacproject/.vscode/
 
+
+### Docker ###
+backend/eniacproject/docker/**
+
