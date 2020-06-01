@@ -1,0 +1,19 @@
+version: '2.0'
+
+services:
+  dbeniac:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'eniac'
+      MYSQL_USER: 'eniac'
+      MYSQL_PASSWORD: 'eniac'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./docker/eniac:/var/lib/mysql
+volumes:
+  eniac:
