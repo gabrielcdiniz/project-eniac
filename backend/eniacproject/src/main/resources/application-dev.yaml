@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/eniac?useSSL=false
+    username: eniac
+    password: eniac
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
